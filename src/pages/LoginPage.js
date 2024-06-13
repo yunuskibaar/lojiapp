@@ -23,10 +23,10 @@ const AuthForm = () => {
 
     try {
       const response = await loginUser(email, password); // ApiService'de tanımlanan loginUser fonksiyonunu kullanıyoruz
-
-      if (response.success) {
+debugger;
+      if (response.status) {
         console.log('Giriş başarılı!');
-        localStorage.setItem('token', response.token); // Save the token
+        localStorage.setItem('token', response.data); // Save the token
         navigate('/dashboard'); // Redirect to dashboard
       } else {
         setMessage('Hatalı e-posta veya şifre.');
